@@ -61,7 +61,7 @@ def create_event_data():
         writer.writerow(['artist', 'firstName', 'gender', 'itemInSession', 'lastName', 'length', \
                          'level', 'location', 'sessionId', 'song', 'userId'])
         for row in get_data_rows():
-            if (row[0] == ''):
+            if row[0] == '':
                 continue
             writer.writerow((row[0], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[12], row[13], row[16]))
 
@@ -125,9 +125,11 @@ def main():
 
     # create event data
     create_event_data()
+    print("Created event_datafile_new.csv")
 
     # create tables
     create_tables.main()
+    print("Created tables")
 
     # connect to db
     session, cluster = create_tables.connect_db()
@@ -137,15 +139,19 @@ def main():
 
     # insert data to session table
     insert_session_data(session, file)
+    print("Inserted data to session_history table")
 
     # insert data to user table
     insert_user_data(session, file)
+    print("Inserted data to user_history table")
 
     # insert data to song table
     insert_song_data(session, file)
+    print("Inserted data to song_history table")
 
     # close session and disconnect cluster
     create_tables.disconnect_db(session, cluster)
+    print("ETL Completed")
 
 
 if __name__ == "__main__":

@@ -29,7 +29,7 @@ song_table_create = """CREATE TABLE IF NOT EXISTS song_history (
                         last_name text,
                         PRIMARY KEY (song_title, userID)
                     )"""
-                    
+
 ## INSERT TABLE
 
 session_table_insert = """INSERT INTO session_history (
@@ -62,7 +62,7 @@ session_table_drop = "DROP TABLE IF EXISTS session_history"
 user_table_drop = "DROP TABLE IF EXISTS user_history"
 song_table_drop = "DROP TABLE IF EXISTS song_history"
 
-# QUERY LISTS
 
+# QUERY LISTS
 create_table_queries = [session_table_create, user_table_create, song_table_create]
 drop_table_queries = [session_table_drop, user_table_drop, song_table_drop]
