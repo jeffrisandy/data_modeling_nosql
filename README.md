@@ -21,11 +21,7 @@ as well as a directory with JSON metadata on the songs in their app.
 
 They'd like a data engineer to create an Apache Cassandra database with tables designed to optimize 
 queries on song play analysis, and bring you on the project. The objective is to create a database 
-schema and ETL pipeline for this analysis.
-
-They'd like a data engineer to create an Apache Cassandra database which can create queries on song
-play data to answer the questions, and wish to bring you on the project. The objective is to create 
-a database for this analysis.
+and ETL pipeline for this analysis.
  
 For example, they want to ask the following three question:
 1. Provide the artist, song title and song's length in the music app history that was heard during 
